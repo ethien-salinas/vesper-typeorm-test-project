@@ -1,0 +1,28 @@
+POST http://localhost:3000/graphql HTTP/1.1
+Content-Type: application/json
+X-Request-Type: GraphQL
+
+query{
+  posts{
+    id
+    title
+    text
+  }
+}
+
+###
+POST http://localhost:3000/graphql HTTP/1.1
+Content-Type: application/json
+X-Request-Type: GraphQL
+
+query($id:Int){
+  post(id:$id){
+    id
+    title
+    text
+  }
+}
+
+{
+  "id": 1
+}
